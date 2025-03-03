@@ -1,40 +1,103 @@
-/* src/components/Hero.css */
-.hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #1d1d1d, #333333);
-  padding-top: 60px;
-}
-
+/* Scroll Animation */
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .fade-up.in-view {
   opacity: 1;
   transform: translateY(0);
 }
 
-.hero-content h1 {
+/* Hero Section Layout */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1d1d1d, #333333);
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Force the container to use full hero height */
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  gap: 20px;
+  height: 100%;
+}
+
+/* Hero Text Styling */
+.hero-text {
+  flex: 1;           /* Increase the space given to the text container */
+  color: #fff;
+  padding-right: 40px; /* More space on the right */
+}
+
+.hero-text h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
+  white-space: nowrap; /* Prevent text wrapping */
 }
 
-.hero-content p {
-  font-size: 1.5rem;
+.hero-text p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  line-height: 1.5;
 }
 
-  
+
+.hero-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #1abc9c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #16a085;
+}
+
+/* Hero Image Styling */
+.hero-image {
+  flex: 2.5;
+  /* Set container height to full parent height */
+  height: 100%;
+  display: flex;
+  align-items: flex-end; /* Ensure image bottom aligns with container bottom */
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-image img {
+  height: 100%;
+  width: auto;
+  margin-left: 100px;
+  filter: grayscale(100%);
+  opacity: 0.2;
+  object-fit: cover;
+}
+
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
   }
-  .hero-content p {
-    font-size: 1.2rem;
+  .hero-image {
+    margin-top: 20px;
+    height: auto;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
   }
 }
-  

@@ -1,0 +1,19 @@
+.about-section h2 {
+    margin-bottom: 20px;
+  }
+  
+.about-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+  
+.fade-right {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-right.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,9 +1,11 @@
 import React from 'react';
+import useInView from '../../hooks/useInView';
 import './Projects.css';
 
 const Projects = () => {
+  const ref = useInView();
   return (
-    <section id="projects" className="projects-section">
+    <section id="projects" className="projects-section fade-left" ref={ref}>
       <div className="container">
         <h2>Projects</h2>
         <div className="project-grid">
